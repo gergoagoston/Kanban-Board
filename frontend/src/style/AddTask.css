@@ -1,0 +1,39 @@
+.kep {
+  width: 40px;
+}
+
+.background {
+  background-color: rgb(205, 199, 155);
+}
+
+.custom-modal .modal-content {
+  background-color: rgba(211, 195, 200, 0.96);
+  border-radius: 10px;
+  color: rgb(33, 24, 24);
+}
+
+.transparent {
+  background-color: transparent;
+  border: 1px solid gray;
+}
+.transparent:focus {
+  background-color: transparent;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+
+#High {
+  border-left: 5px solid red;
+}
+
+#Medium {
+  border-left: 5px solid yellow;
+}
+
+#Low {
+  border-left: 5px solid green;
+}

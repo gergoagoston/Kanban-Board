@@ -1,0 +1,136 @@
+
+services:
+  realtimeweb-tickettrackerproject-nginx:
+    image: nginx:latest
+    container_name: realtimeweb-tickettrackerproject-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - realtimeweb-tickettrackerproject-rabbitmq
+      - realtimeweb-tickettrackerproject-redis
+
+  realtimeweb-tickettrackerproject-rabbitmq:
+    image: rabbitmq:3.12.0-rc.2-management-alpine
+    restart: unless-stopped
+    container_name: realtimeweb-tickettrackerproject-rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+      - 15674:15674
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rtwrabbitvolume:/var/lib/rabbitmq
+
+  realtimeweb-tickettrackerproject-redis:
+    image: redis:6.2.6
+    restart: unless-stopped
+    container_name: realtimeweb-tickettrackerproject-redis
+    ports:
+      - 6379:6379
+
+volumes:
+  rtwrabbitvolume:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # version: '3.5'
+
+# # services:
+# #   ticket-tracker-db:
+# #     image: mongo:7.0
+# #     restart: unless-stopped
+# #     environment:
+# #       MONGO_INITDB_ROOT_USERNAME: admin
+# #       MONGO_INITDB_ROOT_PASSWORD: admin
+# #     ports:
+# #       - 27017:27017
+# #     volumes:
+# #       - 'ticket-tracker-volume:/data/db'
+# #   ticket-tracker-backend:
+# #     image: 'ticket-tracker-backend:1.0.0'
+# #     build:  
+# #       context: ./backend
+# #       dockerfile: Dockerfile
+# #     restart: unless-stopped
+# #     environment:
+# #       MONGO_URL: mongodb://ticket-tracker-db
+# #       MONGO_DB: ticket-tracker-db
+# #       MONGO_USER: admin
+# #       MONGO_PASSWORD: admin
+# #     volumes:
+# #       - ./backend:/ticket-tracker
+# #       - /ticket-tracker/node_modules
+
+# # volumes:
+# #   ticket-tracker-volume:
+
+
+# version: "3.8"
+
+# services:
+#   mongo1:
+#     image: mongo:7.0
+#     restart: unless-stopped
+#     # environment:
+#     #   MONGO_INITDB_ROOT_USERNAME: admin
+#     #   MONGO_INITDB_ROOT_PASSWORD: admin
+#     ports:
+#       - 27017:27017
+#     extra_hosts:
+#     - "host.docker.internal:host-gateway"
+#     volumes:
+#       # - ${PWD}/rs_keyfile:/data/keyfile:ro
+#       - 'ticket-tracker-data:/data/db'
+#       - 'ticket-tracker-config:/data/configdb'
+#     # command: mongod --replSet rs0 --auth --keyFile /data/keyfile:ro
+#     command:  ["--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+
+#   # ticket-tracker-backend:
+#   #   image: 'ticket-tracker-backend:1.0.0'
+#   #   build:  
+#   #     context: ./backend
+#   #     dockerfile: Dockerfile
+#   #   restart: unless-stopped
+#   #   environment:
+#   #     MONGO_URL: mongodb://ticket-tracker-db
+#   #     MONGO_DB: ticket-tracker-db
+#   #     MONGO_USER: admin
+#   #     MONGO_PASSWORD: admin
+#   #   volumes:
+#   #     - ./backend:/ticket-tracker
+#   #     - /ticket-tracker/node_modules
+
+
+
+
+# volumes:
+#   ticket-tracker-data:
+#   ticket-tracker-config:
+
+

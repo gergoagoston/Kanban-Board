@@ -1,0 +1,74 @@
+.board-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  display: grid;
+  max-height: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+  gap: 16px;
+}
+
+.custom-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: middle;
+  margin: 16px;
+  height: 100px;
+  border: 1px solid rgb(165, 151, 151);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  position: relative; /* Added to make .owner's positioning relative to this container */
+}
+
+.owner {
+  position: absolute;
+  bottom: 10px; /* Distance from the bottom of the parent container */
+  right: 10px; /* Distance from the right of the parent container */
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.custom-board:hover {
+  background-color: rgb(165, 151, 151);
+  transform: scale(1.02);
+  transition: 0.3s ease;
+}
+
+.board-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.custom-board h4 {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.action-button {
+  background-color: #121b09;
+  border: 0px;
+}
+.action-button2 {
+  /* background-color: #58651d; */
+  background-color: #dac987;
+  border: 0px;
+}
+
+.custom-modal .modal-content {
+  background-color: rgba(109, 99, 98, 0.96); /* color and transparency */
+  border-radius: 10px;
+  color: rgb(33, 24, 24);
+}
+
+.dashboard {
+  max-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  height: 94vh;
+}

@@ -1,0 +1,21 @@
+.custom-navbar {
+  width: 100vw;
+  background-color: #121b09;
+  /* background-color: rgb(221, 171, 136); */
+  opacity: 100%;
+  border-bottom: 2px solid rgb(165, 151, 151);
+  padding-right: 10px;
+  height: 55px;
+}
+
+.button {
+  background-color: #121b09;
+  border: 0px;
+  color: black;
+}
+
+.button:hover {
+  background-color: #121b09;
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}

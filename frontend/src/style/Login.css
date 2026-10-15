@@ -1,0 +1,6 @@
+.transparent {
+  background-color: transparent;
+}
+.transparent:focus {
+  background-color: transparent;
+}

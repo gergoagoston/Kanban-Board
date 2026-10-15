@@ -1,0 +1,63 @@
+.column-box {
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #d3c3c8;
+  height: 100%;
+}
+.custom-task {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(165, 151, 151);
+  /* max-height: 150px; */
+}
+
+.custom-poker-task {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(165, 151, 151);
+  max-height: 150px;
+  width: 70%;
+}
+
+.text-muted {
+  font-size: small;
+}
+.High {
+  border-left: 5px solid red;
+}
+
+.Medium {
+  border-left: 5px solid yellow;
+}
+
+.Low {
+  border-left: 5px solid green;
+}
+
+.custom-task:hover {
+  background-color: rgb(165, 151, 151);
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.content {
+  font-size: 14px;
+  color: #333;
+  height: 70px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.custom-modal .modal-content {
+  background-color: rgba(211, 195, 200, 0.96); /* color and transparency */
+  border-radius: 10px;
+  color: rgb(33, 24, 24);
+}
